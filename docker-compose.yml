@@ -1,0 +1,14 @@
+# docker-compose.yml
+version: '3'
+services:
+  flask:
+    image: flaskdock
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - './:/app'
+  web:
+    build: .
+    ports:
+      - '5000:5000'
